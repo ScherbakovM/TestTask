@@ -1,7 +1,6 @@
 .footer {
   background-color: var(--accent-color);
   color: var(--main-text);
-  font-family: sans-serif;
   box-shadow: inset 0px -10px 10px rgba(66, 27, 2, 0.1);
 }
 
@@ -257,11 +256,9 @@
     border: 2px solid rgb(255, 234, 0);
   }
 
-
   .footer-nav {
     padding: 20px;
     font-size: clamp(1rem, 5vw, 2rem);
-    
   }
 
   .footer-nav::before {

@@ -176,3 +176,24 @@
     flex-shrink: 0;
   }
 }
+
+.hideme {
+  opacity: 0;
+
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  transform: translateY(30px);
+
+  -webkit-transition: opacity 0.5s ease-in-out,
+    -webkit-transform 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out, -moz-transform 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out, -o-transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.showme {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
