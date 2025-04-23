@@ -1,0 +1,237 @@
+.contacts {
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-right);
+  background: var(--accent-color);
+  padding-top: var(--padding-left);
+  padding-bottom: var(--padding-left);
+  height: max-content;
+  width: 100%;
+}
+
+.contacts-container {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--main-bg);
+  width: 100%;
+  height: max-content;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.form-image-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--main-bg);
+}
+
+.form-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.contacts-form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-description {
+  font-size: clamp(1.8rem, 2vw, 3rem);
+  line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: clamp(20px, 1vw, 40px);
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  color: var(--main-text);
+  background: var(--main-bg);
+  resize: none;
+  transition: all 0.3s ease;
+  outline: 2px solid transparent;
+}
+
+.form-label {
+  line-height: 1;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.checkbox-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-input-checkbox {
+  height: clamp(1rem, 1vw, 1.5rem);
+  width: clamp(1rem, 1vw, 1.5rem);
+}
+
+.form-label-privat {
+  font-size: clamp(0.95rem, 1vw, 1rem);
+}
+
+.form-button {
+  background: linear-gradient(145deg, #4b2e1d 0%, #874016 100%);
+  color: #f5b85f;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: clamp(1rem, 1.5vw, 2.2rem);
+  line-height: 1.5;
+  font-weight: 500;
+  padding: clamp(10px, 2vw, 20px);
+  border-radius: var(--radius);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-button-wrapper {
+  position: relative;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.form-button-text {
+  transition: transform 0.3s ease;
+}
+
+.form-button-clone {
+  position: absolute;
+  transition: all 0.3s ease;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.form-button:hover .form-button-text {
+  transform: translateY(-100%);
+}
+
+.form-button:hover .form-button-clone {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.form-input:not([type="checkbox"]):focus,
+.form-textarea:focus {
+  outline: 2px solid var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: var(--main-bg);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input:not([type="checkbox"]):hover,
+.form-textarea:hover {
+  background-color: #e8e8e8;
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 2px solid var(--accent-color);
+  background-color: #e8e8e8;
+}
+
+.form-button:active {
+  outline: 2px solid var(--accent-color);
+}
+
+.form-label-privat a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.form-label-privat a:hover {
+  text-decoration: none;
+}
+
+input[type="checkbox"] {
+  accent-color: #f5b85f;
+}
+
+@media (max-width: 1500px) {
+  .contacts-form {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  .form-description {
+    margin-bottom: 0;
+  }
+
+  .form-image-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-image {
+    height: 90vh;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .contacts-form-wrapper {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts-container {
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 12px;
+  }
+
+  .form-image-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--main-bg);
+    overflow: hidden;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: clamp(0.9rem, 4vw, 2rem);
+  }
+
+  .form-label {
+    font-size: clamp(0.9rem, 4vw, 2rem);
+  }
+
+  .form-button {
+    padding: 25px 20px;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .form-input-checkbox {
+    height: clamp(1rem, 2vw, 2.6rem);
+    width: clamp(1rem, 2vw, 2.6rem);
+  }
+
+  .form-label-privat {
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+}

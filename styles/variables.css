@@ -1,0 +1,12 @@
+:root {
+  --main-bg: #f1f1f1;
+  --main-text: #4b2e1d;
+  --accent-color: #c97b45;
+  --button-bg: #c97b45;
+  --accent-button-bg: #f5b85f;
+  --font-primary: "Lora";
+  --radius: 8px;
+  --transition-fast: 0.3s ease-in-out;
+  --padding-left: clamp(20px, 4vw, 120px);
+  --padding-right: clamp(20px, 4vw, 120px);
+}

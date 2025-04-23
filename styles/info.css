@@ -1,0 +1,178 @@
+.coffee-info {
+  background-color: var(--accent-color);
+  color: var(--main-text);
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  height: min-content;
+  overflow: hidden;
+}
+
+.coffee-info-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.coffee-blocks-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 40px);
+}
+
+.coffee-info-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coffee-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--main-text);
+}
+
+.coffee-block img {
+  width: auto;
+  height: clamp(2rem, 1.5vw, 2.5rem);
+  flex-shrink: 0;
+}
+
+.coffee-block p {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.order-btn {
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  margin-top: clamp(40px, 3vw, 60px);
+  width: 100%;
+  line-height: 1.5;
+  font-weight: 500;
+  padding: clamp(10px, 2vw, 30px);
+  background: linear-gradient(145deg, #f5b85f 0%, #7411087b 100%);
+  border-radius: var(--radius);
+  color: var(--main-text);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-btn-wrapper {
+  position: relative;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.order-btn-text {
+  transition: transform 0.3s ease;
+}
+
+.order-btn-clone {
+  position: absolute;
+  transition: all 0.3s ease;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.order-btn:hover .order-btn-text {
+  transform: translateY(-100%);
+}
+
+.order-btn:hover .order-btn-clone {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.order-btn:active {
+  outline: 2.5px solid var(--main-text);
+}
+
+@media (max-width: 1400px) {
+  .coffee-info {
+    height: 92vh;
+    min-height: 780px;
+  }
+
+  .coffee-info-image {
+    width: 50%;
+    padding: 0;
+  }
+
+  .coffee-blocks-wrapper {
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    padding: 0;
+  }
+
+  .coffee-block {
+    width: 90%;
+  }
+
+  #coffe-in-hand {
+    display: none;
+  }
+
+  .order-btn {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .coffee-info {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .coffee-info-image {
+    width: 100%;
+    max-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .coffee-blocks-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(20px, 4vw, 40px);
+  }
+
+  .order-btn {
+    padding: 25px 20px;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    width: 100%;
+  }
+
+  .coffee-block {
+    width: 100%;
+  }
+
+  .coffee-block p {
+    font-size: clamp(0.9rem, 4vw, 2rem);
+  }
+
+  .coffee-block img {
+    width: auto;
+    height: clamp(2rem, 4vw, 4rem);
+    flex-shrink: 0;
+  }
+}

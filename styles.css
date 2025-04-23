@@ -1,0 +1,496 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lora";
+  font-weight: 300;
+  background: var(--main-bg);
+  color: var(--main-text);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px var(--padding-left);
+  background: transparent;
+}
+
+.header-indent {
+  width: 45%;
+  display: block;
+  height: 100%;
+  filter: blur(3px);
+}
+
+.logo {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-weight: bold;
+  color: var(--main-text);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.logo::after {
+  content: "Rare Beans";
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(20px, 2vw, 40px);
+}
+
+.header-link {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.header-link::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--main-text);
+  transition: width 0.3s ease;
+}
+
+.header-link:hover::before {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  background-color: var(--main-bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  display: flex;
+  align-items: flex-end;
+  width: 55%;
+  padding-left: var(--padding-left);
+  padding-bottom: clamp(20px, 4vw, 120px);
+  height: 100%;
+}
+
+.hero-text-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: max-content;
+  height: max-content;
+}
+
+.hero-logo {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  color: var(--main-text);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-logo-highlight {
+  display: inline-block;
+  transform: skew(-15deg);
+}
+
+.hero-logo-description {
+  font-size: clamp(1rem, 2.05vw, 2.48rem);
+  color: var(--main-text);
+  margin-bottom: clamp(20px, 1.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.coffee-stats {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(15px, 1.5vw, 25px);
+  margin-bottom: clamp(40px, 4.5vw, 80px);
+}
+
+.coffee-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  width: max-content;
+  height: clamp(1rem, 2vw, 2.2rem);
+  line-height: 1;
+}
+
+.coffee-about-stat {
+  line-height: 1;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.coffee-icon {
+  flex-shrink: 0;
+  width: clamp(1rem, 2vw, 2.2rem);
+  height: clamp(1rem, 2vw, 2.2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coffee-icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.highlight-number {
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  font-weight: 700;
+  color: #603813;
+  display: inline-block;
+  line-height: 1;
+}
+
+.hero-button {
+  background-color: var(--accent-color);
+  background: linear-gradient(145deg, #422f24 0%, #874016 100%);
+  color: #f5b85f;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  line-height: 1.5;
+  font-weight: 500;
+  width: 50%;
+  padding: clamp(10px, 2vw, 30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:active {
+  outline: 2.5px solid #f5b85f;
+}
+
+.hero-button-wrapper {
+  position: relative;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-button-text {
+  transition: transform 0.3s ease;
+}
+
+.hero-button-clone {
+  position: absolute;
+  transition: all 0.3s ease;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.hero-button:hover .hero-button-text {
+  transform: translateY(-100%);
+}
+
+.hero-button:hover .hero-button-clone {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-image {
+  width: 45%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg);
+  transform: translateX(0);
+  animation: overlayShift 0.4s ease forwards;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.hero-image-desktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero-image-mobile {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .hero-logo {
+    font-size: clamp(2.5rem, 5vw, 6rem);
+    color: var(--main-text);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .hero-logo-description {
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .coffee-stats {
+    gap: clamp(20px, 1.5vw, 30px);
+  }
+
+  .header-container {
+    width: 100%;
+  }
+
+  .header-indent {
+    display: none;
+  }
+
+  .hero-text {
+    width: 50%;
+  }
+
+  .hero-image {
+    width: 50%;
+  }
+
+  .header-link {
+    color: #f5b85f;
+  }
+
+  .header-link::before {
+    background-color: #f5b85f;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo::after {
+    content: "RB";
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    align-items: flex-end;
+  }
+
+  .hero-text {
+    height: 100%;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  header {
+    background: linear-gradient(45deg, #f4b453, #c97b45);
+    border-bottom: 2px solid #f5b85f;
+  }
+
+  .header-link {
+    color: var(--main-text);
+  }
+
+  .header-link::before {
+    background-color: var(--main-text);
+  }
+
+  .header-container {
+    width: 100%;
+    padding: clamp(10px, 4vw, 20px);
+  }
+
+  .header-indent {
+    display: none;
+  }
+
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    width: 100%;
+    height: 100vh;
+    padding-left: clamp(10px, 4vw, 20px);
+    padding-right: clamp(10px, 4vw, 20px);
+    min-height: 500px;
+  }
+
+  .hero-text-wrapper {
+    width: 100%;
+  }
+
+  .hero-logo {
+    font-size: clamp(2.5rem, 12vw, 6rem);
+    color: var(--main-text);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    word-wrap: normal;
+  }
+
+  .hero-logo-description {
+    font-size: clamp(1.1rem, 5vw, 2.3rem);
+    margin-bottom: clamp(20px, 1.5vw, 40px);
+  }
+
+  .hero-image-desktop {
+    display: none;
+  }
+
+  .hero-image-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .coffee-stats {
+    gap: clamp(25px, 2vw, 35px);
+  }
+
+  .coffee-stat {
+    height: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .highlight-number {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .coffee-about-stat {
+    line-height: 1;
+    font-size: clamp(1rem, 4vw, 2rem);
+  }
+
+  .coffee-icon {
+    width: clamp(1.5rem, 4vw, 3rem);
+    height: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .hero-button {
+    padding: 25px 20px;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  .hero-button-wrapper {
+    flex-direction: row-reverse;
+    gap: 8px;
+  }
+
+  .hero-button-clone {
+    position: static;
+    opacity: 1;
+    transform: none !important;
+  }
+
+  .hero-button:hover .hero-button-text,
+  .hero-button:hover .hero-button-clone {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .coffee-stat {
+    height: clamp(1rem, 6vw, 2.5rem);
+  }
+
+  .highlight-number {
+    font-size: clamp(1rem, 6vw, 2.5rem);
+  }
+
+  .coffee-about-stat {
+    line-height: 1;
+    font-size: clamp(0.9rem, 4vw, 2rem);
+  }
+
+  .coffee-icon {
+    width: clamp(1rem, 6vw, 2.5rem);
+    height: clamp(1rem, 6vw, 2.5rem);
+  }
+}
+
+@keyframes overlayShift {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes parallaxZoom {
+  0% {
+    background-size: 200%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.hideme {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-in-out;
+}
+
+.showme {
+  opacity: 1;
+  transform: translateY(0);
+}
