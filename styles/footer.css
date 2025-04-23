@@ -51,6 +51,7 @@
   text-decoration: none;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   position: relative;
+  font-family: "Lora";
 }
 
 .footer-nav::before {
@@ -182,6 +183,7 @@
   flex: 1;
   display: flex;
   font-size: 1rem;
+  font-family: "Lora";
 }
 
 .footer-policy {
@@ -196,6 +198,7 @@
 
 .terms {
   padding: 0px clamp(20px, 2vw, 40px);
+  text-align: center;
 }
 
 @media (max-width: 768px) {
